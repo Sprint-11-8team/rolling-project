@@ -1,5 +1,11 @@
+import Test from "./components/Test";
+
 function App() {
-  return <>aa테스트</>;
+  return (
+    <>
+      <Test />
+    </>
+  );
 }
 
 export default App;
