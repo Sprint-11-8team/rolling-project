@@ -1,14 +1,7 @@
 import Router from "./router/Router";
 
-import Test from "./components/Test";
-
 function App() {
-  return (
-    <>
-      <Router />
-      <Test />
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
