@@ -219,8 +219,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -463,6 +462,28 @@ template {
   color: var(--purple-900);
 }
 
+.common-button {
+  display: flex;
+  width: 12rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1.6rem;
+  gap: 1rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-weight: var(--regular);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--purple-600);
+  transition: 0.5s;
+}
+.common-button:hover {
+  color: var(--white);
+  text-shadow: 0 0 1rem rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25), 0 0.2rem 0.2rem rgba(0, 0, 0, 0.22);
+}
+
 :root {
   /* Color-Variables*/
   --black: #000000;
@@ -531,8 +552,6 @@ html {
 body {
   /* 1rem = html의 폰트 사이즈, 10px = 1rem */
   font-size: 1rem;
-  /* 기본 배경색 rich-black으로 통일 */
-  background-color: var(--rich-black);
 }
 
 button {
@@ -545,8 +564,7 @@ button:disabled {
 }
 
 img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .list-page-container {
