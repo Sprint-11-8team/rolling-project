@@ -1,0 +1,118 @@
+.card-container {
+  width: 38.4rem;
+  height: 28rem;
+  padding: 2.8rem 0rem 2.4rem 2.4rem;
+  border-radius: 1.6rem;
+  background-color: var(--white);
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.8);
+  &-header {
+    width: auto;
+    height: 10rem;
+    &-content {
+      display: flex;
+      width: auto;
+      gap: 1.4rem;
+      .writer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        &-title {
+          display: flex;
+          gap: 0.6rem;
+          font-size: 2rem;
+          line-height: 2.4rem;
+          color: var(--black);
+          &-from {
+            font-weight: var(--regular);
+          }
+          &-name {
+            font-weight: var(--bold);
+          }
+        }
+        &-label {
+          width: 4.1rem;
+          height: 2rem;
+          border-radius: 0.4rem;
+          background-color: #e4fbdc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &-sort {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            font-weight: var(--regular);
+            color: var(--green-500);
+          }
+        }
+      }
+    }
+    &-border {
+      width: 33.6rem;
+      color: var(--gray-200);
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.6rem;
+    &-message {
+      font-weight: var(--regular);
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      color: var(--gray-600);
+    }
+    &-writen-date {
+      font-weight: var(--regular);
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: var(--gray-400);
+    }
+  }
+}
+
+/* 2. 화면 크기가 768px 이상일 때 적용 (태블릿 및 작은 데스크탑 화면) */
+@media screen and (min-width: 768px) {
+  .card-container {
+    width: 32rem;
+    height: 23rem;
+    &-header {
+      &-content {
+        .writer-content {
+          &-title {
+            &-from {
+              font-size: 1.8rem;
+              line-height: 2.8rem;
+            }
+            &-name {
+              font-size: 1.6rem;
+              line-height: 2.6rem;
+            }
+          }
+        }
+      }
+      &-border {
+        width: 27.2rem;
+      }
+    }
+    &-body {
+      &-message {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+}
+
+/* 3. 화면 크기가 1024px 이상일 때 적용 (큰 데스크탑 화면) */
+@media screen and (min-width: 1024px) {
+  .card-container {
+    width: 35.2rem;
+    height: 28.4rem;
+    &-header {
+      &-border {
+        width: 30.4rem;
+      }
+    }
+  }
+}
