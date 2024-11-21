@@ -219,7 +219,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -506,8 +507,10 @@ template {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   top: 0;
   left: 0;
 }
@@ -517,6 +520,50 @@ template {
   background-color: var(--purple-600);
 }
 
+.header {
+  width: 100vw;
+  padding: 5px 356px;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+.header-nav {
+  width: 120.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-rolling-button {
+  height: 4rem;
+  width: 15.7rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #ededed;
+  background-color: var(--white);
+  padding: 0.8rem 1.6rem;
+  transition: background-color 0.5s ease;
+}
+
+.header-icon {
+  cursor: pointer;
+}
+
+.header-rolling-button:hover {
+  background-color: var(--gray-300);
+}
+
+@media (max-width: 1300px) {
+  .header {
+    padding: 5px 30px;
+  }
+  .header-nav {
+    width: 100%;
+  }
+}
 :root {
   /* Color-Variables*/
   --black: #000000;
@@ -597,7 +644,8 @@ button:disabled {
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .list-page-container {
@@ -621,4 +669,4 @@ img {
   .list-page-container .label {
     font-size: 2.8rem;
   }
-}
+}/*# sourceMappingURL=style.css.map */

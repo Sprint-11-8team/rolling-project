@@ -1,0 +1,40 @@
+.header {
+  width: 100vw;
+  padding: 5px 356px;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+.header-nav {
+  width: 120.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-rolling-button {
+  height: 4rem;
+  width: 15.7rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #ededed;
+  background-color: var(--white);
+  padding: 0.8rem 1.6rem;
+  transition: background-color 0.5s ease;
+}
+.header-icon {
+  cursor: pointer;
+}
+.header-rolling-button:hover {
+  background-color: var(--gray-300);
+}
+
+@media (max-width: 1300px) {
+  .header {
+    padding: 5px 30px;
+  }
+  .header-nav {
+    width: 100%;
+  }
+}
