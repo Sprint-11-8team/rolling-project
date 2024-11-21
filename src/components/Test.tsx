@@ -1,11 +1,11 @@
-import Button from './common/button';
+import Button from './common/Button';
 
 const Test = () => {
   return (
     <>
       <div className="test">
         테스트!!
-        <Button name="test-button" disabled>
+        <Button addClassName="test-button" disabled>
           확인
         </Button>
       </div>
