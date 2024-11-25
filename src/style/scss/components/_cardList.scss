@@ -95,7 +95,6 @@
   }
 
   .badge-button {
-    width: 100%;
     border-radius: 3.2rem;
     padding: 0.6rem 0.8rem;
     background-color: rgba(0, 0, 0, 0.54);
@@ -122,7 +121,30 @@
 }
 
 @media screen and (min-width: 768px) {
-}
+  .card-content {
+    width: 27.5rem;
+    height: 26rem;
 
-@media screen and (min-width: 1024px) {
+    .card__header {
+      &-text {
+        font-size: 2.4rem;
+        font-weight: 700; // bold
+        line-height: 3.6rem;
+      }
+
+      &-content {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+    }
+
+    .card {
+      gap: 4.3rem;
+    }
+
+    .badge-button {
+      padding: 0.8rem 1.2rem;
+      background-color: rgba(0, 0, 0, 0.54);
+    }
+  }
 }
