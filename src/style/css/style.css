@@ -576,6 +576,81 @@ template {
   background-color: var(--purple-600);
 }
 
+.header {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+.header-nav {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-rolling-button {
+  height: 100%;
+  width: 14.2rem;
+  height: 4rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #ededed;
+  background-color: var(--white);
+  padding: 0.8rem 1.6rem;
+  transition: background-color 0.5s ease;
+  font-size: 1.4rem;
+}
+
+.rolling-paper-text {
+  width: 11rem;
+  height: 2rem;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-icon {
+  cursor: pointer;
+  width: 10.6rem;
+  height: 3rem;
+}
+
+.header-rolling-button:hover {
+  background-color: var(--gray-300);
+}
+
+@media (min-width: 360px) {
+  .header {
+    padding: 1.1rem 2.4rem;
+  }
+  .header-rolling-button {
+    width: 15.7rem;
+    height: 4rem;
+  }
+  .rolling-paper-text {
+    width: 12.5rem;
+    height: 2.6rem;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    padding: 0.5rem 20rem;
+  }
+}
+@media (min-width: 1920px) {
+  .header {
+    padding: 0.5rem 36rem;
+  }
+}
 :root {
   /* Color-Variables*/
   --black: #000000;
@@ -660,6 +735,31 @@ img {
      object-fit: cover;
 }
 
+.layout-body {
+  width: 100%;
+  padding: 1.2rem 2rem;
+}
+
+@media (min-width: 360px) {
+  .layout-body {
+    padding: 1.1rem 2.4rem;
+  }
+}
+@media (min-width: 720px) {
+  .layout-body {
+    padding: 0.5rem 2.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .layout-body {
+    padding: 0.5rem 20rem;
+  }
+}
+@media (min-width: 1920px) {
+  .layout-body {
+    padding: 0.5rem 36rem;
+  }
+}
 .list-page-container {
   display: flex;
   flex-direction: column;
@@ -681,4 +781,4 @@ img {
   .list-page-container .label {
     font-size: 2.8rem;
   }
-}
+}/*# sourceMappingURL=style.css.map */
