@@ -6,7 +6,9 @@ const Header = () => {
         <a href="/">
           <img className="header-icon" src={icon}></img>
         </a>
-        <button className="header-rolling-button">롤링 페이퍼 만들기</button>
+        <button className="header-rolling-button">
+          <div className="rolling-paper-text">롤링 페이퍼 만들기</div>
+        </button>
       </div>
     </div>
   );
