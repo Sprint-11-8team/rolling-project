@@ -1,5 +1,5 @@
 import Button from "../common/Button";
-import Profile from "./Profile";
+import Profile from "../common/Profile";
 import Emoji from "../../assets/icons/emoji.svg";
 
 const Card = () => {
