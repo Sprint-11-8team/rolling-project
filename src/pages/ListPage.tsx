@@ -7,14 +7,23 @@ const ListPage = () => {
       <div className="list-cardlist-content">
         <div className="list-cardlist">
           <div className="label">인기 롤링 페이퍼 🔥</div>
-          <CardList />
-        </div>
-        <div className="list-cardlist">
-          <div className="label">최근에 만든 롤링 페이퍼⭐️</div>
           <Swiper
             className="mySwiper"
-            pagination={true}
-            pagination-type="progressbar"
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 140,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 140,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 140,
+              },
+            }}
+            loop={true}
             navigation={true}
           >
             <SwiperSlide>
@@ -32,7 +41,28 @@ const ListPage = () => {
             <SwiperSlide>
               <CardList />
             </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardList />
+            </SwiperSlide>
           </Swiper>
+        </div>
+        <div className="list-cardlist">
+          <div className="label">최근에 만든 롤링 페이퍼⭐️</div>
         </div>
       </div>
     </div>
