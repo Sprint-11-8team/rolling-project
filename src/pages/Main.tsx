@@ -1,5 +1,11 @@
+import TextEditor from "../components/textFiled/TextEditor";
+
 const Main = () => {
-  return <div>Main 테스트</div>;
+  return (
+    <div className="main">
+      <TextEditor />
+    </div>
+  );
 };
 
 export default Main;
