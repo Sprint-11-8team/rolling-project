@@ -1,7 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainPage from "../pages/MainPage";
-import ListPage from "../pages/ListPage";
-import Layout from "../layout/Layout";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainPage from '../pages/MainPage';
+import ListPage from '../pages/ListPage';
+import PostPage from '../pages/PostPage';
+import Layout from '../layout/Layout';
 
 function Router() {
   return (
@@ -10,7 +11,7 @@ function Router() {
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} /> {/* "/" 경로 */}
           <Route path="list" element={<ListPage />} />
-          <Route path="post" element={<Post />} />
+          <Route path="post" element={<PostPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
