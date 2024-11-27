@@ -19,7 +19,7 @@
 
     &-text {
       font-size: 1.8rem;
-      font-weight: 700; // bold
+      font-weight: var(--bold);
       line-height: 2.8rem;
     }
 
@@ -52,7 +52,7 @@
       }
 
       .count-circle > span {
-        font-weight: 400;
+        font-weight: var(--regular);
         font-size: 1.2rem;
         line-height: 1.8rem;
         color: var(--gray-500);
@@ -61,11 +61,11 @@
 
     &-content {
       font-size: 1.4rem;
-      font-weight: 400;
+      font-weight: var(--regular);
       line-height: 2rem;
       color: var(--gray-700);
       .bold {
-        font-weight: 700;
+        font-weight: var(--bold);
       }
     }
   }
@@ -88,7 +88,7 @@
       .count {
         font-size: 1.4rem;
         line-height: 2rem;
-        font-weight: 400;
+        font-weight: var(--regular);
         color: white;
       }
     }
@@ -128,7 +128,7 @@
     .card__header {
       &-text {
         font-size: 2.4rem;
-        font-weight: 700; // bold
+        font-weight: var(--bold); // bold
         line-height: 3.6rem;
       }
 
