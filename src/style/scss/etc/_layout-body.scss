@@ -1,25 +1,25 @@
 .layout-body {
   width: 100%;
-  padding: 1.2rem 2rem;
+  padding: 0 2rem;
 }
 
 @media (min-width: 360px) {
   .layout-body {
-    padding: 1.1rem 2.4rem;
+    padding: 0 2.4rem;
   }
 }
 @media (min-width: 720px) {
   .layout-body {
-    padding: 0.5rem 2.4rem;
+    padding: 0 2.4rem;
   }
 }
 @media (min-width: 1024px) {
   .layout-body {
-    padding: 0.5rem 20rem;
+    padding: 0 20rem;
   }
 }
 @media (min-width: 1920px) {
   .layout-body {
-    padding: 0.5rem 36rem;
+    padding: 0 36rem;
   }
 }
