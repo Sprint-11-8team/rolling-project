@@ -1,4 +1,4 @@
-import Profile from '../cardList/Profile';
+import Profile from '../common/Profile';
 
 const PostCard = () => {
   return (
@@ -20,11 +20,7 @@ const PostCard = () => {
           <hr className="card-container-header-border" />
         </div>
         <div className="card-container-body">
-          <div className="card-container-body-message">
-            코로나가 또 다시 기승을 부리는 요즘이네요.
-            <br />
-            건강, 체력 모두 조심 또 조심하세요!
-          </div>
+          <div className="card-container-body-message">코로나가 또 다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 조심하세요!</div>
           <div className="card-container-body-writen-date">2024.07.08</div>
         </div>
       </div>
