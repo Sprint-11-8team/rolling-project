@@ -483,7 +483,7 @@ template {
 }
 .card-content .card__header-text {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: var(--bold);
   line-height: 2.8rem;
 }
 .card-content .card__header-profile-list {
@@ -510,19 +510,19 @@ template {
   background-color: white;
 }
 .card-content .card__header-profile-list .count-circle > span {
-  font-weight: 400;
+  font-weight: var(--regular);
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: var(--gray-500);
 }
 .card-content .card__header-content {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: var(--regular);
   line-height: 2rem;
   color: var(--gray-700);
 }
 .card-content .card__header-content .bold {
-  font-weight: 700;
+  font-weight: var(--bold);
 }
 .card-content .card__footer {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -541,11 +541,10 @@ template {
 .card-content .card__footer-button .count {
   font-size: 1.4rem;
   line-height: 2rem;
-  font-weight: 400;
+  font-weight: var(--regular);
   color: white;
 }
 .card-content .badge-button {
-  width: 100%;
   border-radius: 3.2rem;
   padding: 0.6rem 0.8rem;
   background-color: rgba(0, 0, 0, 0.54);
@@ -571,6 +570,28 @@ template {
   left: 0;
 }
 
+@media screen and (min-width: 768px) {
+  .card-content {
+    width: 27.5rem;
+    height: 26rem;
+  }
+  .card-content .card__header-text {
+    font-size: 2.4rem;
+    font-weight: var(--bold);
+    line-height: 3.6rem;
+  }
+  .card-content .card__header-content {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+  .card-content .card {
+    gap: 4.3rem;
+  }
+  .card-content .badge-button {
+    padding: 0.8rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.54);
+  }
+}
 .common-button {
   border-radius: 0.6rem;
   background-color: var(--purple-600);
@@ -764,21 +785,38 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 120rem;
-  padding-top: 5rem;
+}
+.list-page-container .list-cardlist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7.4rem;
 }
 .list-page-container .label {
-  font-weight: 700;
+  font-weight: var(--bold);
   line-height: 3.6rem;
   font-size: 2rem;
 }
+.list-page-container .list-cardlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 @media (min-width: 768px) {
+  .list-page-container {
+    gap: 5rem;
+  }
+  .list-page-container .list-cardlist {
+    gap: 1.6rem;
+  }
   .list-page-container .label {
+    font-weight: var(--bold);
+    line-height: 3.6rem;
     font-size: 2.4rem;
   }
 }
 @media (min-width: 1024px) {
-  .list-page-container .label {
-    font-size: 2.8rem;
+  .list-page-container .list-cardlist {
+    gap: 2rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
