@@ -126,7 +126,7 @@
 /* 모바일 (360px 이상) */
 @media (min-width: 360px) {
   .main-page {
-    margin-top: 4.9rem;
+    margin-top: 4.2rem;
   }
   .intro-image-container {
     min-height: 13rem; /* 기본 모바일 높이 */
@@ -148,6 +148,9 @@
 }
 /* 태블릿 (768px 이상) */
 @media (min-width: 768px) {
+  .main-page {
+    margin-top: 4.9rem;
+  }
   .intro-image-container {
     max-height: 16rem; /* 기본 모바일 높이 */
     max-width: 59rem;

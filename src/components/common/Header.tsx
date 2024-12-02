@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import icon from "../../assets/icons/homeIcon.svg";
 import { useLocation } from "react-router-dom";
 const Header = () => {
@@ -11,7 +12,9 @@ const Header = () => {
         </a>
         {location.pathname === "/" && ( // 경로가 '/' 일때만 렌더링
           <button className="header-rolling-button">
-            <div className="rolling-paper-text">롤링 페이퍼 만들기</div>
+            <Link to="/post">
+              <div className="rolling-paper-text">롤링페이퍼 만들기</div>
+            </Link>
           </button>
         )}
       </div>
