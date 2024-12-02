@@ -839,7 +839,7 @@ img {
   overflow: hidden;
 }
 
-.intro-section-second {
+.intro-emoji-section {
   width: 100%;
   height: 35.2rem;
   padding: 2.4rem;
@@ -929,6 +929,11 @@ img {
   justify-content: center;
 }
 
+.button-section a {
+  width: 100%;
+  height: 100%;
+}
+
 .viewMoreButton {
   width: 100%;
   height: 56px;
@@ -1014,7 +1019,7 @@ img {
     width: 72rem;
     height: 20.4rem;
   }
-  .intro-section-second {
+  .intro-emoji-section {
     flex-direction: row-reverse;
     padding: 6rem;
     justify-content: space-between;
