@@ -751,6 +751,11 @@ button:disabled {
   cursor: not-allow;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .layout-body {
   width: 100%;
   padding: 0 2rem;
