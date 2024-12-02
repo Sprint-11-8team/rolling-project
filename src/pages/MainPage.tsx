@@ -2,6 +2,8 @@ import cardImg from "../assets/images/example_card_img.svg";
 
 import emojiImg from "../assets/images/emoji_img.png";
 import emojiAddImg from "../assets/images/emoji_add_img.png";
+import { Link } from "react-router-dom";
+import Button from "../components/common/Button";
 const MainPage = () => {
   return (
     <div className="main-page">
@@ -32,6 +34,11 @@ const MainPage = () => {
             <img className="intro-emoji" src={emojiImg}></img>
           </div>
         </main>
+      </section>
+      <section className="button-section">
+        <Button addClassName="viewMoreButton" disabled={false}>
+          <Link to="/post">구경해보기</Link>
+        </Button>
       </section>
     </div>
   );
