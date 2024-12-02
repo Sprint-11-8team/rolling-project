@@ -18,7 +18,7 @@ const MainPage = () => {
         </main>
       </section>
 
-      <section className="intro-section">
+      <section className="intro-section-second">
         <header className="intro-content">
           <div className="intro-point">Point. 02</div>
           <h2 className="intro-title">서로에게 이모지로 감정을 표현해보세요</h2>
