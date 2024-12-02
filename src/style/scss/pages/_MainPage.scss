@@ -111,11 +111,14 @@
   height: 56px;
 
   border-radius: 12px;
-  background-color: var(--purple-600);
+  background-color: var(--purple-500);
+  transition: background-color 0.5s ease;
   font-size: 18px;
   color: var(--white-100);
 }
-
+.viewMoreButton:hover {
+  background-color: var(--purple-600);
+}
 /* 모바일 (360px 이상) */
 @media (min-width: 360px) {
   .main-page {
