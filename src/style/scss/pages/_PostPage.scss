@@ -83,4 +83,59 @@
   border-radius: 1.2rem;
   font-size: 1.8rem;
   color: white;
+  background-color: var(--purple-500);
+  transition: background-color 0.5s ease;
+}
+.post-create-button:hover {
+  background-color: var(--purple-600);
+}
+
+@media (min-width: 768px) {
+  .color-grid-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .color-grid-item {
+    flex: 1;
+  }
+  .post-create-button-container {
+    padding: 2.4rem 0rem;
+  }
+  .post-create-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .post-page-container {
+    margin-top: 5.7rem;
+    width: 72rem;
+  }
+  .post-page-container h2 {
+    font-size: 2.4rem;
+
+    height: 5rem;
+  }
+  .name-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .background-color-container {
+    height: 6.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .background-color-container h2 {
+    height: 3.6rem;
+  }
+  .background-color-container p {
+    font-size: 1.6rem;
+  }
+  .color-img-container {
+    width: 24rem;
+    margin-bottom: 4.5rem;
+  }
+  .color-grid-container {
+    margin-bottom: 4.5rem;
+  }
 }
