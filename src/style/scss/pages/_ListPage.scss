@@ -19,6 +19,10 @@
     flex-direction: column;
     gap: 1.2rem;
   }
+
+  .mySwiper {
+    width: 100%;
+  }
 }
 @media (min-width: 768px) {
   .list-page-container {
