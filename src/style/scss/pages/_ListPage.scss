@@ -23,6 +23,18 @@
   .mySwiper {
     width: 100%;
   }
+
+  .swiper {
+    padding-left: 2.4rem;
+  }
+
+  .swiper-wrapper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    width: 20.8rem;
+  }
 }
 @media (min-width: 768px) {
   .list-page-container {
@@ -47,4 +59,8 @@
       gap: 2rem;
     }
   }
+}
+
+.layout-body.no-padding {
+  padding: 0;
 }
