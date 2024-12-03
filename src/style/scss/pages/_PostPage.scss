@@ -34,8 +34,10 @@
   border-radius: 0.6rem;
   padding: 0.7rem 1.4rem;
   flex: 1;
+  font-size: 1.6rem;
 }
-.color-grid-container {
+.color-grid-container,
+.image-grid-container {
   display: grid; /* Grid 활성화 */
   grid-template-columns: repeat(
     2,
@@ -47,6 +49,7 @@
   height: 100%; /* 부모 컨테이너의 높이 */
   margin-bottom: 5.8rem;
 }
+
 .color-grid-item {
   display: flex;
   align-items: center;
@@ -71,6 +74,17 @@
 .color-grid-item:nth-child(4) {
   background-color: var(--green-200);
 }
+.image-grid-container div {
+  height: 15.4rem;
+  width: 100%;
+  border-radius: 1.6rem;
+}
+.image-grid-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.6rem;
+}
+
 .post-create-button-container {
   width: 100%;
   display: flex;
@@ -109,7 +123,7 @@
 @media (min-width: 1920px) {
   .post-page-container {
     margin-top: 5.7rem;
-    width: 72rem;
+    width: 100%;
   }
   .post-page-container h2 {
     font-size: 2.4rem;

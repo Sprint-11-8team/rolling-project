@@ -1,6 +1,11 @@
+import { useState } from "react";
 import Button from "../components/common/Button";
-
+import backgroundImg1 from "../assets/images/backgroundImg/background_img_1.svg";
+import backgroundImg2 from "../assets/images/backgroundImg/background_img_2.jpg";
+import backgroundImg3 from "../assets/images/backgroundImg/background_img_3.svg";
+import backgroundImg4 from "../assets/images/backgroundImg/background_img_4.jpg";
 const PostPage = () => {
+  const [isColorVisible, setIsColorVisible] = useState(true);
   return (
     <form className="post-page-container">
       <div className="name-input-container">
@@ -12,15 +17,42 @@ const PostPage = () => {
         <p>컬러를 선택하거나, 이미지를 선택할 수 있습니다.</p>
       </div>
       <div className="color-img-container">
-        <button>컬러</button>
-        <button>이미지</button>
+        <button
+          type="button"
+          onClick={() => {
+            setIsColorVisible(true);
+          }}
+        >
+          컬러
+        </button>
+        <button type="button" onClick={() => setIsColorVisible(false)}>
+          이미지
+        </button>
       </div>
-      <div className="color-grid-container">
-        <div className="color-grid-item"></div>
-        <div className="color-grid-item"></div>{" "}
-        <div className="color-grid-item"></div>{" "}
-        <div className="color-grid-item"></div>
-      </div>
+      {isColorVisible ? (
+        <div className="color-grid-container">
+          <div className="color-grid-item"></div>
+          <div className="color-grid-item"></div>{" "}
+          <div className="color-grid-item"></div>{" "}
+          <div className="color-grid-item"></div>
+        </div>
+      ) : (
+        <div className="image-grid-container">
+          <div>
+            <img src={backgroundImg1}></img>
+          </div>
+          <div>
+            <img src={backgroundImg2}></img>
+          </div>
+          <div>
+            <img src={backgroundImg3}></img>
+          </div>
+          <div>
+            <img src={backgroundImg4}></img>
+          </div>
+        </div>
+      )}
+
       <div className="post-create-button-container">
         <Button addClassName="post-create-button" disabled={false}>
           생성하기

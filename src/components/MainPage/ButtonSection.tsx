@@ -6,7 +6,6 @@ const ButtonSection = () => {
     <section className="button-section">
       <Link to="/list">
         <Button addClassName="viewMoreButton" disabled={false}>
-          {" "}
           구경해보기
         </Button>
       </Link>
