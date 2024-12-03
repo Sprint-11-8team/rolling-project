@@ -1,6 +1,5 @@
-import Button from "../common/Button";
 import Profile from "../common/Profile";
-import Emoji from "../../assets/icons/emoji.svg";
+import Badge from "../common/ Badge";
 
 const Card = () => {
   return (
@@ -22,24 +21,9 @@ const Card = () => {
         </div>
         <div className="card__footer">
           <div className="card__footer-button-area">
-            <Button disabled={false} addClassName={"badge-button"}>
-              <div className="card__footer-button">
-                <img src={Emoji} alt="이모지" className="img"></img>
-                <div className="count">20</div>
-              </div>
-            </Button>
-            <Button disabled={false} addClassName={"badge-button"}>
-              <div className="card__footer-button">
-                <img src={Emoji} alt="이모지" className="img"></img>
-                <div className="count">20</div>
-              </div>
-            </Button>
-            <Button disabled={false} addClassName={"badge-button"}>
-              <div className="card__footer-button">
-                <img src={Emoji} alt="이모지" className="img"></img>
-                <div className="count">20</div>
-              </div>
-            </Button>
+            <Badge />
+            <Badge />
+            <Badge />
           </div>
         </div>
       </div>
