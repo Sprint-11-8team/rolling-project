@@ -533,22 +533,6 @@ template {
   gap: 0.4rem;
   padding-top: 1.6rem;
 }
-.card-content .card__footer-button {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.card-content .card__footer-button .count {
-  font-size: 1.4rem;
-  line-height: 2rem;
-  font-weight: var(--regular);
-  color: white;
-}
-.card-content .badge-button {
-  border-radius: 3.2rem;
-  padding: 0.6rem 0.8rem;
-  background-color: rgba(0, 0, 0, 0.54);
-}
 
 .profile-content {
   border-radius: 5rem;
@@ -672,6 +656,103 @@ template {
 @media (min-width: 1920px) {
   .header {
     padding: 0.5rem 36rem;
+  }
+}
+.sub-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 2rem;
+}
+.sub-header-text {
+  display: none;
+}
+.sub-header-right {
+  display: flex;
+}
+.sub-header-right .emoji-area {
+  display: flex;
+  gap: 0.2rem;
+}
+.sub-header-right .emoji-area .badge-area {
+  display: flex;
+  gap: 0.8rem;
+}
+.sub-header-right .emoji-area .header-btn {
+  display: flex;
+  padding: 0.6rem;
+  background-color: unset;
+}
+.sub-header-right .emoji-area .header-btn .arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.sub-header-right .button-area {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.sub-header-right .button-area .button-image {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gray-300);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
+  background-color: white;
+}
+.sub-header-right .button-area .border-line {
+  width: 0.1rem;
+  height: 2.8rem;
+  background-color: var(--gray-200);
+}
+
+@media (min-width: 768px) {
+  .sub-header {
+    padding: 1.3rem 2.4rem;
+    justify-content: space-between;
+    gap: 6.8rem;
+  }
+  .sub-header-text {
+    display: block;
+    font-size: 2.8rem;
+    line-height: 4.2rem;
+    color: var(--gray-800);
+  }
+  .button-image::after {
+    padding-left: 0.4rem;
+    content: "추가";
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .sub-header {
+    justify-content: space-between;
+    gap: 26.3rem;
+  }
+}
+.badge-button {
+  border-radius: 3.2rem;
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+.footer-button {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.footer-button .count {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: var(--regular);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .badge-button {
+    padding: 0.8rem 1.2rem;
   }
 }
 :root {
