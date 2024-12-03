@@ -1063,13 +1063,95 @@ img {
   margin-top: 4.9rem;
 }
 
+.post-page-container h2 {
+  font-size: 2.4rem;
+  height: 5rem;
+}
+
 .name-input-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 4.8rem;
 }
 
-.name-input-container h2 {
-  font-size: 2.4rem;
+.name-input-container input {
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--gray-300);
+}
+
+.background-color-container {
+  margin-bottom: 2.4rem;
+}
+
+.background-color-container p {
+  font-size: 1.6rem;
+}
+
+.color-img-container {
+  width: 23.6rem;
+  height: 4rem;
+  display: flex;
+  margin-bottom: 2.8rem;
+}
+
+.color-img-container button {
+  border-radius: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  flex: 1;
+}
+
+.color-grid-container {
+  display: grid; /* Grid 활성화 */
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* 2개의 열 생성, 각 열은 동일한 너비 */
+  grid-template-rows: repeat(2, 1fr); /* 2개의 행 생성, 각 행은 동일한 높이 */
+  gap: 1.2rem; /* 그리드 아이템 간 간격 */
+  width: 100%; /* 부모 컨테이너의 너비 */
+  height: 100%; /* 부모 컨테이너의 높이 */
+  margin-bottom: 5.8rem;
+}
+
+.color-grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* 배경색 */
+  border: 1px solid #ddd; /* 테두리 */
+  height: 15.4rem; /* 각 아이템의 높이 */
+  border-radius: 1.6rem;
+}
+
+.color-grid-item:nth-child(1) {
+  background-color: var(--beige-200);
+}
+
+.color-grid-item:nth-child(2) {
+  background-color: var(--purple-200);
+}
+
+.color-grid-item:nth-child(3) {
+  background-color: var(--blue-200);
+}
+
+.color-grid-item:nth-child(4) {
+  background-color: var(--green-200);
+}
+
+.post-create-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2.4rem 2rem;
+}
+
+.post-create-button {
   width: 32rem;
-  height: 5rem;
+  height: 5.6rem;
+  border-radius: 1.2rem;
+  font-size: 1.8rem;
+  color: white;
 } /*# sourceMappingURL=style.css.map */
