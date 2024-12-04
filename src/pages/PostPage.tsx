@@ -6,9 +6,20 @@ import backgroundImg3 from "../assets/images/backgroundImg/background_img_3.svg"
 import backgroundImg4 from "../assets/images/backgroundImg/background_img_4.jpg";
 import checkIcon from "../assets/icons/check_icon.svg";
 const PostPage = () => {
+  const [inputValue, setInputValue] = useState(""); // 이름 값 상태
+  const [inputError, setInputError] = useState("값을 입력해 주세요.");
   const [isColorVisible, setIsColorVisible] = useState(true);
   const [selectedColor, setSelectedColor] = useState("color-grid-item1");
   const [selectedImage, setSelectedImage] = useState(backgroundImg1); // 선택된 이미지 상태
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(e.target.value);
+    if (value.length < 2) {
+      setInputError("적어도 2글자 이상 입력해주세요.");
+    } else {
+      setInputError("");
+    }
+  };
   const handleColorSelect = (color: string) => {
     setSelectedColor(color);
   };
@@ -20,7 +31,12 @@ const PostPage = () => {
       {/* 이름 입력 */}
       <div className="name-input-container">
         <h2>To.</h2>
-        <input placeholder="받는 사람 이름을 입력해 주세요"></input>
+        <input
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="받는 사람 이름을 입력해 주세요"
+        ></input>
+        {inputError && <div className="error-message">{inputError}</div>}
       </div>
 
       {/* 배경화면 선택 */}

@@ -21,7 +21,12 @@
   border-radius: 0.8rem;
   border: 1px solid var(--gray-300);
 }
-
+.error-message {
+  padding: 0.3rem;
+  color: var(--red);
+  font-size: 1rem;
+  font-weight: 600;
+}
 // 배경화면
 .background-color-container {
   margin-bottom: 2.4rem;
