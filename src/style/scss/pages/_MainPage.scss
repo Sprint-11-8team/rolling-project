@@ -99,30 +99,7 @@
 .intro-emoji {
   width: 16.2rem;
 }
-.button-section {
-  width: 100%;
-  padding: 24px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button-section a {
-  width: 100%;
-  height: 100%;
-}
-.viewMoreButton {
-  width: 100%;
-  height: 56px;
 
-  border-radius: 12px;
-  background-color: var(--purple-500);
-  transition: background-color 0.5s ease;
-  font-size: 18px;
-  color: var(--white-100);
-}
-.viewMoreButton:hover {
-  background-color: var(--purple-600);
-}
 /* 모바일 (360px 이상) */
 @media (min-width: 360px) {
   .main-page {
@@ -214,9 +191,5 @@
   .intro-emoji {
     height: 14.4rem;
     width: 29.3rem;
-  }
-  .viewMoreButton {
-    width: 28rem;
-    height: 5.6rem;
   }
 }

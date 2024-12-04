@@ -1,5 +1,5 @@
 import Profile from "../common/Profile";
-import Badge from "../common/ Badge";
+import Badge from "../common/Badge";
 
 const Card = () => {
   return (
