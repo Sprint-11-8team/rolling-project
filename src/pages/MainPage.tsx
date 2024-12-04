@@ -1,4 +1,4 @@
-import ButtonSection from "../components/MainPage/ButtonSection";
+import ButtonSection from "../components/common/ButtonSection";
 import EmojiSection from "../components/MainPage/EmojiSection";
 import IntroSection from "../components/MainPage/IntroSection";
 const MainPage = () => {
@@ -6,7 +6,11 @@ const MainPage = () => {
     <div className="main-page">
       <IntroSection />
       <EmojiSection />
-      <ButtonSection />
+      <ButtonSection
+        linkTo="/list"
+        content="구경해보기"
+        addClassName="viewMoreButton"
+      />
     </div>
   );
 };

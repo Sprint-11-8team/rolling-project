@@ -755,6 +755,41 @@ template {
     padding: 0.8rem 1.2rem;
   }
 }
+.button-section {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-section a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.viewMoreButton {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--purple-500);
+  transition: background-color 0.5s ease;
+  font-size: 18px;
+  color: var(--white-100);
+}
+
+.viewMoreButton:hover {
+  background-color: var(--purple-600);
+}
+
+/* 데스크탑 (1920px 이상) */
+@media (min-width: 1920px) {
+  .viewMoreButton {
+    width: 28rem;
+    height: 5.6rem;
+  }
+}
 :root {
   /* Color-Variables*/
   --black: #000000;
@@ -873,16 +908,21 @@ img {
   display: flex;
   flex-direction: column;
   gap: 7.4rem;
+  padding-bottom: 4.2rem;
 }
 .list-page-container .label {
   font-weight: var(--bold);
   line-height: 3.6rem;
   font-size: 2rem;
+  padding-left: 2rem;
 }
 .list-page-container .list-cardlist {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+.list-page-container .list-cardlist-bottom {
+  padding: 0 2rem;
 }
 .list-page-container .mySwiper {
   width: 100%;
@@ -1023,33 +1063,6 @@ img {
   width: 16.2rem;
 }
 
-.button-section {
-  width: 100%;
-  padding: 24px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button-section a {
-  width: 100%;
-  height: 100%;
-}
-
-.viewMoreButton {
-  width: 100%;
-  height: 56px;
-  border-radius: 12px;
-  background-color: var(--purple-500);
-  transition: background-color 0.5s ease;
-  font-size: 18px;
-  color: var(--white-100);
-}
-
-.viewMoreButton:hover {
-  background-color: var(--purple-600);
-}
-
 /* 모바일 (360px 이상) */
 @media (min-width: 360px) {
   .main-page {
@@ -1135,10 +1148,6 @@ img {
   .intro-emoji {
     height: 14.4rem;
     width: 29.3rem;
-  }
-  .viewMoreButton {
-    width: 28rem;
-    height: 5.6rem;
   }
 }
 .post-message-container {
