@@ -219,7 +219,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -545,8 +546,10 @@ template {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   top: 0;
   left: 0;
 }
@@ -752,120 +755,6 @@ template {
     padding: 0.8rem 1.2rem;
   }
 }
-.card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 35.2rem;
-  height: 28.4rem;
-  padding: 2.8rem 2.4rem 2.4rem 2.4rem;
-  border-radius: 1.6rem;
-  background-color: var(--white);
-  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.8);
-}
-.card-container-header {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.card-container-header-content {
-  display: flex;
-  width: auto;
-  gap: 1.4rem;
-}
-.card-container-header-content .writer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.card-container-header-content .writer-content-title {
-  display: flex;
-  gap: 0.6rem;
-  font-size: 2rem;
-  line-height: 2.4rem;
-  color: var(--black);
-}
-.card-container-header-content .writer-content-title-from {
-  font-size: 1.8rem;
-  line-height: 2.8rem;
-  font-weight: var(--regular);
-}
-.card-container-header-content .writer-content-title-name {
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  font-weight: var(--bold);
-}
-.card-container-header-content .writer-content-label {
-  width: 4.1rem;
-  height: 2rem;
-  border-radius: 0.4rem;
-  background-color: #e4fbdc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card-container-header-content .writer-content-label-sort {
-  font-size: 1.4rem;
-  line-height: 2rem;
-  font-weight: var(--regular);
-  color: var(--green-500);
-}
-.card-container-header-border {
-  width: 27.2rem;
-  color: var(--gray-200);
-}
-.card-container-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 1.6rem;
-  padding: 1.6rem 2.4rem;
-}
-.card-container-body-message {
-  height: 11rem;
-  font-weight: var(--regular);
-  font-size: 1.5rem;
-  line-height: 2.2rem;
-  color: var(--gray-600);
-}
-.card-container-body-writen-date {
-  font-weight: var(--regular);
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  color: var(--gray-400);
-}
-
-/* 2. 화면 크기가 768px 이상일 때 적용 (태블릿 및 작은 데스크탑 화면) */
-@media (min-width: 768px) {
-  .card-container {
-    width: 35.2rem;
-    height: 28.4rem;
-  }
-  .card-container-header-content .writer-content-title {
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
-  .card-container-header-border {
-    width: 30.4rem;
-  }
-  .card-container-body-message {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-  }
-}
-/* 3. 화면 크기가 1024px 이상일 때 적용 (큰 데스크탑 화면) */
-@media (min-width: 1024px) {
-  .card-container {
-    width: 38.4rem;
-    height: 28rem;
-  }
-  .card-container-header-border {
-    width: 33.6rem;
-  }
-  .card-container-body-message {
-    height: 10.6rem;
-  }
-}
 :root {
   /* Color-Variables*/
   --black: #000000;
@@ -946,7 +835,8 @@ button:disabled {
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .layout-body {
@@ -1030,12 +920,13 @@ img {
 }
 
 /* 기본 스타일 (모바일 기준) */
-.main-page {
+.main-page-container {
   margin-top: 3rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 2.4rem;
+  min-height: 100vh;
 }
 
 .intro-section {
@@ -1125,12 +1016,8 @@ img {
   justify-content: center;
 }
 
-.intro-emoji-add {
-  width: 24.5rem;
-}
-
 .intro-emoji {
-  width: 16.2rem;
+  width: 100%;
 }
 
 .button-section {
@@ -1139,6 +1026,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
 }
 
 .button-section a {
@@ -1162,7 +1050,7 @@ img {
 
 /* 모바일 (360px 이상) */
 @media (min-width: 360px) {
-  .main-page {
+  .main-page-container {
     margin-top: 4.2rem;
   }
   .intro-image-container {
@@ -1170,20 +1058,16 @@ img {
     min-width: 47rem;
   }
   .intro-emoji-container {
-    max-width: 47rem;
-    height: 20.4rem;
-  }
-  .intro-emoji-add {
     width: 100%;
-    height: 6.2rem;
   }
   .intro-emoji {
-    width: 16.2rem;
+    width: 100%;
+    max-width: 40rem;
   }
 }
 /* 태블릿 (768px 이상) */
 @media (min-width: 768px) {
-  .main-page {
+  .main-page-container {
     margin-top: 4.9rem;
   }
   .intro-image-container {
@@ -1215,9 +1099,9 @@ img {
 }
 /* 데스크탑 (1920px 이상) */
 @media (min-width: 1920px) {
-  .main-page {
+  .main-page-container {
     margin-top: 6rem;
-    height: 67.8rem;
+    height: 100vh;
     width: 100%;
   }
   .intro-section {
@@ -1230,25 +1114,29 @@ img {
     height: 15.6rem;
     gap: 1.6rem;
   }
-  .intro-image-container {
-    width: 72rem;
-    height: 20.4rem;
-  }
   .intro-emoji-section {
     flex-direction: row-reverse;
     padding: 6rem;
     justify-content: space-between;
   }
-  .intro-main-second {
+  .intro-emoji-container {
     width: 72rem;
+    height: 20.4rem;
+    align-items: flex-start;
   }
   .intro-emoji {
     height: 14.4rem;
     width: 29.3rem;
   }
   .viewMoreButton {
+    width: 100%;
+    height: 100%;
+  }
+  .button-section a {
     width: 28rem;
     height: 5.6rem;
+    display: flex;
+    justify-content: center;
   }
 }
 .post-message-container {
@@ -1264,7 +1152,8 @@ img {
 }
 
 .post-page-container {
-  margin-top: 4.9rem;
+  padding-top: 4.9rem;
+  height: 100%;
 }
 
 .post-page-container h2 {
@@ -1285,6 +1174,13 @@ img {
   border: 1px solid var(--gray-300);
 }
 
+.error-message {
+  padding: 0.3rem;
+  color: var(--red);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .background-color-container {
   margin-bottom: 2.4rem;
 }
@@ -1293,20 +1189,34 @@ img {
   font-size: 1.6rem;
 }
 
-.color-img-container {
+.color-img-button-container {
   width: 23.6rem;
   height: 4rem;
   display: flex;
   margin-bottom: 2.8rem;
+  position: relative;
 }
 
-.color-img-container button {
+.dynamic-border-highlight {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0.6rem;
+  left: 0;
+  top: 0;
+  border: 3px solid var(--purple-500);
+  transition: left 0.3s ease;
+}
+
+.color-img-button-container button {
   border-radius: 0.6rem;
   padding: 0.7rem 1.4rem;
   flex: 1;
+  font-size: 1.6rem;
 }
 
-.color-grid-container {
+.color-grid-container,
+.image-grid-container {
   display: grid; /* Grid 활성화 */
   grid-template-columns: repeat(2, 1fr); /* 2개의 열 생성, 각 열은 동일한 너비 */
   grid-template-rows: repeat(2, 1fr); /* 2개의 행 생성, 각 행은 동일한 높이 */
@@ -1324,22 +1234,87 @@ img {
   border: 1px solid #ddd; /* 테두리 */
   height: 15.4rem; /* 각 아이템의 높이 */
   border-radius: 1.6rem;
+  cursor: pointer;
+  position: relative;
 }
 
-.color-grid-item:nth-child(1) {
+.color-grid-item1 {
   background-color: var(--beige-200);
 }
 
-.color-grid-item:nth-child(2) {
+.color-grid-item2 {
   background-color: var(--purple-200);
 }
 
-.color-grid-item:nth-child(3) {
+.color-grid-item3 {
   background-color: var(--blue-200);
 }
 
-.color-grid-item:nth-child(4) {
+.color-grid-item4 {
   background-color: var(--green-200);
+}
+
+.image-grid-item {
+  height: 15.4rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-grid-item.selected img {
+  opacity: 0.7; /* 투명도 추가 */
+  transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+.image-grid-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.6rem;
+}
+
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0); /* 처음에 보이지 않음 */
+    opacity: 0; /* 투명 */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* 최종 크기 */
+    opacity: 1; /* 완전히 보임 */
+  }
+}
+.color-check-icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 정중앙으로 이동 */
+  width: 4.4rem !important; /* 체크 아이콘 크기 */
+  height: 4.4rem !important; /* 체크 아이콘 크기 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
+}
+
+.image-check-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 정중앙으로 이동 */
+  width: 4.4rem !important; /* 체크 아이콘 크기 */
+  height: 4.4rem !important; /* 체크 아이콘 크기 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
+}
+
+.color-grid-item.selected .color-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0에서 1로 커지는 애니메이션 */
+}
+
+.image-grid-item.selected .image-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0.3초 동안 부드럽게 커짐 */
 }
 
 .post-create-button-container {
@@ -1355,8 +1330,78 @@ img {
   border-radius: 1.2rem;
   font-size: 1.8rem;
   color: white;
+  background-color: var(--purple-500);
+  transition: background-color 0.5s ease;
 }
 
+.post-create-button:hover {
+  background-color: var(--purple-600);
+}
+
+@media (min-width: 360px) {
+  .color-grid-container,
+  .image-grid-container {
+    display: grid; /* Grid 활성화 */
+    grid-template-columns: repeat(2, 1fr); /* 2개의 열 생성, 각 열은 동일한 너비 */
+    grid-template-rows: repeat(2, 1fr); /* 2개의 행 생성, 각 행은 동일한 높이 */
+    gap: 1.2rem; /* 그리드 아이템 간 간격 */
+    width: 100%; /* 부모 컨테이너의 너비 */
+    height: 100%; /* 부모 컨테이너의 높이 */
+    margin-bottom: 5.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .post-page-container {
+    width: 72rem;
+    margin: auto;
+  }
+  .color-grid-container,
+  .image-grid-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .color-grid-item {
+    flex: 1;
+  }
+  .post-create-button-container {
+    padding: 2.4rem 0rem;
+  }
+  .post-create-button {
+    width: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .post-page-container {
+    margin-top: 5.7rem;
+  }
+  .post-page-container h2 {
+    font-size: 2.4rem;
+    height: 5rem;
+  }
+  .name-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .background-color-container {
+    height: 6.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .background-color-container h2 {
+    height: 3.6rem;
+  }
+  .background-color-container p {
+    font-size: 1.6rem;
+  }
+  .color-img-button-container {
+    width: 24rem;
+    margin-bottom: 4.5rem;
+  }
+  .color-grid-container,
+  .image-grid-container {
+    margin-bottom: 4.5rem;
+  }
+}
 /**
  * Swiper 11.1.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -1600,4 +1645,4 @@ img {
     transform: rotate(360deg);
   }
 }
-/* Slide styles end */
+/* Slide styles end *//*# sourceMappingURL=style.css.map */

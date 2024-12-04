@@ -1,5 +1,5 @@
 import emojiImg from "../../assets/images/emoji_img.png";
-import emojiAddImg from "../../assets/images/emoji_add_img.png";
+
 const EmojiSection = () => {
   return (
     <section className="intro-emoji-section">
@@ -10,11 +10,8 @@ const EmojiSection = () => {
           롤링 페이퍼에 이모지를 추가할 수 있어요.
         </p>
       </header>
-      <main className="intro-main-second">
-        <div className="intro-emoji-container">
-          <img className="intro-emoji-add" src={emojiAddImg}></img>
-          <img className="intro-emoji" src={emojiImg}></img>
-        </div>
+      <main className="intro-emoji-container">
+        <img className="intro-emoji" src={emojiImg}></img>
       </main>
     </section>
   );

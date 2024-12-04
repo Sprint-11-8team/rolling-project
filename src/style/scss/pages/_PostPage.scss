@@ -1,5 +1,7 @@
+// 최상단 컨테이너
 .post-page-container {
-  margin-top: 4.9rem;
+  padding-top: 4.9rem;
+  height: 100%;
 }
 .post-page-container h2 {
   font-size: 2.4rem;
@@ -12,30 +14,54 @@
   margin-bottom: 4.8rem;
 }
 
+//네임 인풋
 .name-input-container input {
   padding: 1.2rem 1.6rem;
   font-size: 1.6rem;
   border-radius: 0.8rem;
   border: 1px solid var(--gray-300);
 }
+.error-message {
+  padding: 0.3rem;
+  color: var(--red);
+  font-size: 1rem;
+  font-weight: 600;
+}
+// 배경화면
 .background-color-container {
   margin-bottom: 2.4rem;
 }
 .background-color-container p {
   font-size: 1.6rem;
 }
-.color-img-container {
+
+// 이미지
+
+.color-img-button-container {
   width: 23.6rem;
   height: 4rem;
   display: flex;
   margin-bottom: 2.8rem;
+  position: relative;
 }
-.color-img-container button {
+.dynamic-border-highlight {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0.6rem;
+  left: 0;
+  top: 0;
+  border: 3px solid var(--purple-500);
+  transition: left 0.3s ease;
+}
+.color-img-button-container button {
   border-radius: 0.6rem;
   padding: 0.7rem 1.4rem;
   flex: 1;
+  font-size: 1.6rem;
 }
-.color-grid-container {
+.color-grid-container,
+.image-grid-container {
   display: grid; /* Grid 활성화 */
   grid-template-columns: repeat(
     2,
@@ -47,6 +73,7 @@
   height: 100%; /* 부모 컨테이너의 높이 */
   margin-bottom: 5.8rem;
 }
+
 .color-grid-item {
   display: flex;
   align-items: center;
@@ -55,22 +82,83 @@
   border: 1px solid #ddd; /* 테두리 */
   height: 15.4rem; /* 각 아이템의 높이 */
   border-radius: 1.6rem;
+  cursor: pointer;
+  position: relative;
 }
-.color-grid-item:nth-child(1) {
+.color-grid-item1 {
   background-color: var(--beige-200);
 }
 
-.color-grid-item:nth-child(2) {
+.color-grid-item2 {
   background-color: var(--purple-200);
 }
 
-.color-grid-item:nth-child(3) {
+.color-grid-item3 {
   background-color: var(--blue-200);
 }
 
-.color-grid-item:nth-child(4) {
+.color-grid-item4 {
   background-color: var(--green-200);
 }
+.image-grid-item {
+  height: 15.4rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  position: relative;
+  cursor: pointer;
+}
+.image-grid-item.selected img {
+  opacity: 0.7; /* 투명도 추가 */
+  transition: all 0.3s ease; /* 부드러운 효과 */
+}
+.image-grid-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.6rem;
+}
+
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0); /* 처음에 보이지 않음 */
+    opacity: 0; /* 투명 */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* 최종 크기 */
+    opacity: 1; /* 완전히 보임 */
+  }
+}
+.color-check-icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 정중앙으로 이동 */
+  width: 4.4rem !important; /* 체크 아이콘 크기 */
+  height: 4.4rem !important; /* 체크 아이콘 크기 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
+}
+.image-check-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 정중앙으로 이동 */
+  width: 4.4rem !important; /* 체크 아이콘 크기 */
+  height: 4.4rem !important; /* 체크 아이콘 크기 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
+}
+.color-grid-item.selected .color-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0에서 1로 커지는 애니메이션 */
+}
+
+.image-grid-item.selected .image-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0.3초 동안 부드럽게 커짐 */
+}
+// 최하단 버튼부분
 .post-create-button-container {
   width: 100%;
   display: flex;
@@ -83,4 +171,80 @@
   border-radius: 1.2rem;
   font-size: 1.8rem;
   color: white;
+  background-color: var(--purple-500);
+  transition: background-color 0.5s ease;
+}
+.post-create-button:hover {
+  background-color: var(--purple-600);
+}
+
+/// 미디어쿼리 반응형
+@media (min-width: 360px) {
+  .color-grid-container,
+  .image-grid-container {
+    display: grid; /* Grid 활성화 */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2개의 열 생성, 각 열은 동일한 너비 */
+    grid-template-rows: repeat(2, 1fr); /* 2개의 행 생성, 각 행은 동일한 높이 */
+    gap: 1.2rem; /* 그리드 아이템 간 간격 */
+    width: 100%; /* 부모 컨테이너의 너비 */
+    height: 100%; /* 부모 컨테이너의 높이 */
+    margin-bottom: 5.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .post-page-container {
+    width: 72rem;
+    margin: auto;
+  }
+  .color-grid-container,
+  .image-grid-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .color-grid-item {
+    flex: 1;
+  }
+  .post-create-button-container {
+    padding: 2.4rem 0rem;
+  }
+  .post-create-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .post-page-container {
+    margin-top: 5.7rem;
+  }
+  .post-page-container h2 {
+    font-size: 2.4rem;
+
+    height: 5rem;
+  }
+  .name-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .background-color-container {
+    height: 6.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .background-color-container h2 {
+    height: 3.6rem;
+  }
+  .background-color-container p {
+    font-size: 1.6rem;
+  }
+  .color-img-button-container {
+    width: 24rem;
+    margin-bottom: 4.5rem;
+  }
+  .color-grid-container,
+  .image-grid-container {
+    margin-bottom: 4.5rem;
+  }
 }
