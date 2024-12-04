@@ -93,11 +93,8 @@
   justify-content: center;
 }
 
-.intro-emoji-add {
-  width: 24.5rem;
-}
 .intro-emoji {
-  width: 16.2rem;
+  width: 100%;
 }
 .button-section {
   width: 100%;
@@ -135,16 +132,12 @@
   }
 
   .intro-emoji-container {
-    max-width: 47rem;
-    height: 20.4rem;
+    width: 100%;
   }
 
-  .intro-emoji-add {
-    width: 100%;
-    height: 6.2rem;
-  }
   .intro-emoji {
-    width: 16.2rem;
+    width: 100%;
+    max-width: 40rem;
   }
 }
 /* 태블릿 (768px 이상) */
@@ -199,19 +192,18 @@
     height: 15.6rem;
     gap: 1.6rem;
   }
-  .intro-image-container {
-    width: 72rem;
-    height: 20.4rem;
-  }
 
   .intro-emoji-section {
     flex-direction: row-reverse;
     padding: 6rem;
     justify-content: space-between;
   }
-  .intro-main-second {
+  .intro-emoji-container {
     width: 72rem;
+    height: 20.4rem;
+    align-items: flex-start;
   }
+
   .intro-emoji {
     height: 14.4rem;
     width: 29.3rem;
