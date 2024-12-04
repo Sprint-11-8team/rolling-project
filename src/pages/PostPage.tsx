@@ -8,7 +8,7 @@ import checkIcon from "../assets/icons/check_icon.svg";
 const PostPage = () => {
   const [isColorVisible, setIsColorVisible] = useState(true);
   const [selectedColor, setSelectedColor] = useState("color-grid-item1");
-  const [selectedImage, setSelectedImage] = useState(""); // 선택된 이미지 상태
+  const [selectedImage, setSelectedImage] = useState(backgroundImg1); // 선택된 이미지 상태
   const handleColorSelect = (color: string) => {
     setSelectedColor(color);
   };
