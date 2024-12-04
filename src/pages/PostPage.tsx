@@ -61,7 +61,7 @@ const PostPage = () => {
               onClick={() => handleColorSelect(item)}
             >
               {selectedColor === item && (
-                <img className="check-icon" src={checkIcon}></img>
+                <img className="color-check-icon" src={checkIcon}></img>
               )}
             </div>
           ))}
@@ -92,7 +92,7 @@ const PostPage = () => {
       )}
 
       <div className="post-create-button-container">
-        <Button addClassName="post-create-button" disabled={false}>
+        <Button addClassName="post-create-button" disabled={true}>
           생성하기
         </Button>
       </div>

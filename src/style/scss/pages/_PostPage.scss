@@ -78,6 +78,7 @@
   height: 15.4rem; /* 각 아이템의 높이 */
   border-radius: 1.6rem;
   cursor: pointer;
+  position: relative;
 }
 .color-grid-item1 {
   background-color: var(--beige-200);
@@ -110,9 +111,29 @@
   width: 100%;
   border-radius: 1.6rem;
 }
-.check-icon {
+
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0); /* 처음에 보이지 않음 */
+    opacity: 0; /* 투명 */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* 최종 크기 */
+    opacity: 1; /* 완전히 보임 */
+  }
+}
+.color-check-icon {
   width: 4.4rem;
   height: 4.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 정중앙으로 이동 */
+  width: 4.4rem !important; /* 체크 아이콘 크기 */
+  height: 4.4rem !important; /* 체크 아이콘 크기 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
 }
 .image-check-icon {
   position: absolute;
@@ -122,8 +143,16 @@
   width: 4.4rem !important; /* 체크 아이콘 크기 */
   height: 4.4rem !important; /* 체크 아이콘 크기 */
   pointer-events: none; /* 클릭 이벤트 무시 */
+  pointer-events: none; /* 클릭 이벤트 무시 */
+  opacity: 0; /* 초기 투명 */
+}
+.color-grid-item.selected .color-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0에서 1로 커지는 애니메이션 */
 }
 
+.image-grid-item.selected .image-check-icon {
+  animation: grow 0.3s ease-in-out forwards; /* 0.3초 동안 부드럽게 커짐 */
+}
 // 최하단 버튼부분
 .post-create-button-container {
   width: 100%;
