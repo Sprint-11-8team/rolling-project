@@ -1,8 +1,9 @@
-import backgroundImg1 from "../assets/images/backgroundImg/background_img_1.svg";
-import backgroundImg2 from "../assets/images/backgroundImg/background_img_2.jpg";
-import backgroundImg3 from "../assets/images/backgroundImg/background_img_3.svg";
-import backgroundImg4 from "../assets/images/backgroundImg/background_img_4.jpg";
-import checkIcon from "../assets/icons/check_icon.svg";
+import backgroundImg1 from "../../assets/images/backgroundImg/background_img_1.svg";
+import backgroundImg2 from "../../assets/images/backgroundImg/background_img_2.jpg";
+import backgroundImg3 from "../../assets/images/backgroundImg/background_img_3.svg";
+import backgroundImg4 from "../../assets/images/backgroundImg/background_img_4.jpg";
+
+import checkIcon from "../../assets/icons/check_icon.svg";
 interface ImageGridProps {
   selectedImage: string;
   handleImageSelect: (image: string) => void;

@@ -7,6 +7,7 @@ const CreateButton = ({ inputValue }: CreateButtonProps) => {
     <section className="post-create-button-container">
       <Button
         addClassName="post-create-button"
+        type="submit"
         disabled={inputValue.length >= 2 ? false : true}
       >
         생성하기

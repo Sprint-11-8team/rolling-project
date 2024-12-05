@@ -1,4 +1,4 @@
-import checkIcon from "../assets/icons/check_icon.svg";
+import checkIcon from "../../assets/icons/check_icon.svg";
 interface ColorGridProps {
   selectedColor: string;
   handleColorSelect: (color: string) => void;

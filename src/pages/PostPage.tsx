@@ -8,6 +8,7 @@ import BackgroundDescription from "../components/PostPage/BackgroundDescription"
 import ColorImageToggle from "../components/PostPage/ColorImageToggle";
 import ColorGrid from "../components/PostPage/ColorGrid";
 import ImgGrid from "../components/PostPage/ImgGrid";
+import { useNavigate } from "react-router-dom";
 
 const PostPage = () => {
   // 이름 입력 값 상태
@@ -28,7 +29,7 @@ const PostPage = () => {
   // 선택된 배경 이미지를 저장하는 상태
   const [selectedImage, setSelectedImage] = useState(backgroundImg1);
 
-  // 이름 입력 값 변경 시 호출되는 핸들러
+  const navigate = useNavigate();
 
   // 컬러 선택 시 호출되는 핸들러
   const handleColorSelect = (color: string) => {
@@ -40,8 +41,21 @@ const PostPage = () => {
     setSelectedImage(img); // 선택된 이미지를 상태로 저장
   };
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (inputError) {
+      return;
+    }
+    navigate(`/post/${inputValue}/message`, {
+      state: {
+        inputValue,
+        selectedImage,
+      },
+    });
+  };
+
   return (
-    <form className="post-page-container">
+    <form className="post-page-container" onSubmit={handleSubmit}>
       {/* 이름 입력 섹션 */}
       <NameInput
         inputValue={inputValue}
