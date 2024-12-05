@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 4.8rem;
+  min-height: 12rem;
 }
 
 //네임 인풋
@@ -247,4 +248,10 @@
   .image-grid-container {
     margin-bottom: 4.5rem;
   }
+}
+.post-create-button:disabled {
+  cursor: not-allowed; /* 마우스 커서를 not-allowed로 변경 */
+  background-color: var(--gray-600); /* 배경색을 회색으로 변경 */
+  color: var(--white); /* 텍스트 색상을 어두운 회색으로 변경 */
+  opacity: 0.7; /* 약간의 투명도를 추가해 비활성화 느낌 강조 */
 }
