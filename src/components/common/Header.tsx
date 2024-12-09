@@ -8,7 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const isSmallScreen = window.innerWidth <= 768;
+      const isSmallScreen = window.innerWidth < 768;
       const isAllowedPath =
         location.pathname === "/" || location.pathname === "/list";
       setIsVisible(!isSmallScreen || isAllowedPath);

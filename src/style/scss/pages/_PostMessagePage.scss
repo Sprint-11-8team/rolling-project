@@ -1,18 +1,70 @@
-.post-message-container {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-}
 .post-message-form {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
+.post-message-form h2 {
+  font-size: 2.4rem;
+  height: 5rem;
+}
+
 .input-name-section {
   width: 100%;
   height: 9.8rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+
+.input-name-section input {
+  width: 100%;
+  height: 5rem;
+  padding: 1.2rem 1.6rem;
+  gap: 1rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 0.8rem;
+}
+.profile-image-container {
+  width: 100%;
+  height: 12.2rem;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+.selected-profile-image {
+  width: 8rem;
+  height: 8rem;
+}
+.profile-images-section {
+  width: 100%; /* 부모의 너비에 맞춤 */
+  height: 100%; /* 부모의 높이 내에서 스크롤 가능 */
+  display: flex;
+  flex-direction: column;
+}
+.profile-images-instruction {
+  width: 100%;
+  height: 2.6rem;
+  font-size: 1.6rem;
+}
+.profile-image-grid {
+  width: 20.8rem;
+  height: 12.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 */
+  gap: 1rem;
+}
+
+.profile-image-grid img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .post-message-form {
+    padding-top: 5rem;
+  }
 }
