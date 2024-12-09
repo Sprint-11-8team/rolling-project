@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import classes from "../../utils/classes";
+import { ReactNode } from 'react';
+import classes from '../../utils/classes';
 
 /*
  * <pre>
@@ -13,34 +13,32 @@ import classes from "../../utils/classes";
  * @see =================== 변경 내역 ==================
  *   날짜       변경자     내용
  *  2024.11.24.  김진희  최초작성
+ *  2024.12.09.  윤예지  버튼속성 추가
  */
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   addClassName?: string | string[];
   handleClick?: () => void;
   disabled: boolean;
-  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
 }
 
-function Button({
+const Button = ({
   children,
   addClassName,
   handleClick,
   disabled,
-  type = "button",
-}: ButtonProps) {
+  ...props
+}: ButtonProps) => {
   return (
-    <>
-      <button
-        type={type}
-        className={classes("common-button", addClassName)}
-        onClick={handleClick}
-        disabled={disabled}
-      >
-        {children}
-      </button>
-    </>
+    <button
+      className={classes('common-button', addClassName)}
+      onClick={handleClick}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </button>
   );
-}
+};
 
 export default Button;
