@@ -3,7 +3,7 @@ import EmojiSection from "../components/MainPage/EmojiSection";
 import IntroSection from "../components/MainPage/IntroSection";
 const MainPage = () => {
   return (
-    <div className="main-page">
+    <div className="main-page-container">
       <IntroSection />
       <EmojiSection />
       <ButtonSection
