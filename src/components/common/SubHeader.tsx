@@ -1,8 +1,10 @@
-import Badge from "./Badge";
-import addBtnImg from "../../assets/images/add_btn.svg";
-import arrowDownImg from "../../assets/images/arrow_down.svg";
-import shareImg from "../../assets/images/share.svg";
-import Button from "./Button";
+import Badge from './Badge';
+import addBtnImg from '../../assets/images/add_btn.svg';
+import arrowDownImg from '../../assets/images/arrow_down.svg';
+import shareImg from '../../assets/images/share.svg';
+import Button from './Button';
+import { useState } from 'react';
+import Picker, { EmojiClickData } from 'emoji-picker-react';
 
 /*
  * <pre>
@@ -19,27 +21,48 @@ import Button from "./Button";
  */
 
 const SubHeader = () => {
+  const [inputStr, setInputStr] = useState('');
+  const [showPicker, setShowPicker] = useState(false);
+
+  const onEmojiClick = (event: MouseEvent, emojiObject: EmojiClickData) => {
+    setInputStr((prevInput) => prevInput + emojiObject.emoji);
+    setShowPicker(false);
+  };
+
   return (
-    <div className="sub-header">
-      <div className="sub-header-text">To. Ashley Kim</div>
-      <div className="sub-header-right">
-        <div className="emoji-area">
-          <div className="badge-area">
+    <div className='sub-header'>
+      <div className='sub-header-text'>To. Ashley Kim</div>
+      <div className='sub-header-right'>
+        <div className='emoji-area'>
+          <div className='badge-area'>
             <Badge />
             <Badge />
             <Badge />
           </div>
-          <Button disabled={false} addClassName={"header-btn"}>
-            <img className="arrow" src={arrowDownImg}></img>
+          <Button disabled={false} addClassName={'header-btn'}>
+            <img className='arrow' src={arrowDownImg}></img>
           </Button>
         </div>
-        <div className="button-area">
-          <Button disabled={false} addClassName={"button-image"}>
-            <img className="arrow" src={shareImg}></img>
+        <div className='button-area'>
+          <Button
+            disabled={false}
+            addClassName={'button-image'}
+            onClick={() => setShowPicker((val) => !val)}
+          >
+            <img className='arrow' src={addBtnImg}></img>
           </Button>
-          <div className="border-line"></div>
-          <Button disabled={false} addClassName={"button-image"}>
-            <img className="arrow" src={addBtnImg}></img>
+          <div></div>
+          {showPicker && (
+            <div className='picker-area'>
+              <Picker
+                width={'100%'}
+                // onEmojiClick={onEmojiClick}
+              />
+            </div>
+          )}
+          <div className='border-line'></div>
+          <Button disabled={false} addClassName={'button-image no-after'}>
+            <img className='arrow' src={shareImg}></img>
           </Button>
         </div>
       </div>
