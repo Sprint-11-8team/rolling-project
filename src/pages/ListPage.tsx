@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CardList from '../components/cardList/Card';
-import SubHeader from '../components/common/SubHeader';
 import ButtonSection from '../components/common/ButtonSection';
 import Header from '../components/common/Header';
 
@@ -8,7 +7,6 @@ const ListPage = () => {
   return (
     <>
       <Header />
-      <SubHeader />
       <div className='list-page-container'>
         <div className='list-cardlist-content'>
           <div className='list-cardlist'>

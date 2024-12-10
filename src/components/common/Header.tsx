@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import icon from "../../assets/icons/homeIcon.svg";
-import { useLocation } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import icon from '../../assets/icons/homeIcon.svg';
+import { useLocation } from 'react-router-dom';
 
 /*
  * <pre>
@@ -21,16 +21,16 @@ const Header = () => {
   const location = useLocation();
   console.log(location);
   return (
-    <div className="header">
-      <div className="header-nav">
-        <a href="/">
-          <img className="header-icon" src={icon}></img>
+    <div className='header'>
+      <div className='header-nav'>
+        <a href='/'>
+          <img className='header-icon' src={icon}></img>
         </a>
-        {(location.pathname === "/" || location.pathname === "/list") && (
+        {(location.pathname === '/' || location.pathname === '/list') && (
           // 경로가 '/' 일때만 렌더링
-          <button className="header-rolling-button">
-            <Link to="/post">
-              <div className="rolling-paper-text">롤링페이퍼 만들기</div>
+          <button className='header-rolling-button'>
+            <Link to='/post'>
+              <div className='rolling-paper-text'>롤링페이퍼 만들기</div>
             </Link>
           </button>
         )}

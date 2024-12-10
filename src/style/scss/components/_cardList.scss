@@ -23,42 +23,6 @@
       line-height: 2.8rem;
     }
 
-    &-profile-list {
-      display: flex;
-      gap: -0.5rem;
-      position: relative;
-
-      :first-child {
-        margin-left: 0;
-      }
-
-      :nth-child(2) {
-        margin-left: -1rem;
-      }
-
-      :nth-child(3) {
-        margin-left: -1rem;
-      }
-
-      :nth-child(4) {
-        margin-left: -1rem;
-        z-index: 10;
-      }
-
-      .count-circle {
-        padding: 0.5rem 0.6rem;
-        border-radius: 3rem;
-        background-color: white;
-      }
-
-      .count-circle > span {
-        font-weight: var(--regular);
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        color: var(--gray-500);
-      }
-    }
-
     &-content {
       font-size: 1.4rem;
       font-weight: var(--regular);

@@ -1,11 +1,15 @@
-import { Outlet } from "react-router-dom";
-import Header from "../components/common/Header";
+import { Outlet, useLocation, useMatch } from 'react-router-dom';
+import Header from '../components/common/Header';
+import SubHeader from '../components/common/SubHeader';
 
 const Layout = () => {
+  const match = useMatch('/post/:id');
+  const showSubHeader = match !== null;
   return (
     <>
       <Header />
-      <main className="layout-body">
+      {showSubHeader && <SubHeader />}
+      <main className='layout-body'>
         <Outlet />
       </main>
     </>

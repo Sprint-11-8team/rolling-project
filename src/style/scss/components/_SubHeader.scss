@@ -1,9 +1,17 @@
 .sub-header {
+  width: 100%;
+  padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: right;
-  width: 100%;
-  padding: 0.8rem 2rem;
+  justify-content: center;
+
+  &-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 120rem;
+    justify-content: space-between;
+  }
 
   &-text {
     display: none;
@@ -11,6 +19,14 @@
 
   &-right {
     display: flex;
+    margin-left: auto;
+    .profile-area {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      padding-right: 2.8rem;
+    }
+
     .emoji-area {
       display: flex;
       gap: 0.2rem;
@@ -45,11 +61,6 @@
         border-radius: 0.6rem;
         background-color: white;
       }
-      .border-line {
-        width: 0.1rem;
-        height: 2.8rem;
-        background-color: var(--gray-200);
-      }
 
       .picker-area {
         position: absolute;
@@ -60,14 +71,16 @@
       }
     }
   }
+
+  .border-line {
+    width: 0.1rem;
+    height: 2.8rem;
+    background-color: var(--gray-200);
+  }
 }
 
 @media (min-width: 768px) {
   .sub-header {
-    padding: 1.3rem 2.4rem;
-    justify-content: space-between;
-    gap: 6.8rem;
-
     &-text {
       display: block;
       font-size: 2.8rem;
@@ -95,7 +108,5 @@
 
 @media (min-width: 1024px) {
   .sub-header {
-    justify-content: space-between;
-    gap: 26.3rem;
   }
 }
