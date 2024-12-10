@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-import backgroundImg1 from "../assets/images/backgroundImg/background_img_1.svg";
-
 import NameInput from "../components/PostPage/NameInput";
 import CreateButton from "../components/PostPage/CreateButton";
 import BackgroundDescription from "../components/PostPage/BackgroundDescription";
 import ColorImageToggle from "../components/PostPage/ColorImageToggle";
 import ColorGrid from "../components/PostPage/ColorGrid";
 import ImgGrid from "../components/PostPage/ImgGrid";
+import { BASE_URL } from "../api/Api";
 import { useNavigate } from "react-router-dom";
 
 const PostPage = () => {
@@ -24,12 +23,12 @@ const PostPage = () => {
   const [isColorVisible, setIsColorVisible] = useState(true);
 
   // 선택된 컬러 클래스명을 저장하는 상태
-  const [selectedColor, setSelectedColor] = useState("color-grid-item1");
+  const [selectedColor, setSelectedColor] = useState("blue");
 
   // 선택된 배경 이미지를 저장하는 상태
-  const [selectedImage, setSelectedImage] = useState(backgroundImg1);
-
-  const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(
+    "https://picsum.photos/id/683/3840/2160"
+  );
 
   // 컬러 선택 시 호출되는 핸들러
   const handleColorSelect = (color: string) => {
@@ -40,18 +39,46 @@ const PostPage = () => {
   const handleImageSelect = (img: string) => {
     setSelectedImage(img); // 선택된 이미지를 상태로 저장
   };
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  // 폼 제출 핸들러
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // 기본 동작 막기
+
     if (inputError) {
-      return;
+      return; // 입력 에러가 있으면 실행 중단
     }
-    navigate(`/post/${inputValue}/message`, {
-      state: {
-        inputValue,
-        selectedImage,
-      },
-    });
+
+    const url = `${BASE_URL}/77/recipients/`;
+    const postData = {
+      team: "77",
+      name: inputValue,
+      backgroundColor: selectedColor,
+      backgroundImageURL: selectedImage,
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text(); // 응답 내용을 텍스트로 확인
+        console.error("Error Response Text:", errorText);
+        throw new Error(`HTTP Error: ${response.status}`);
+      }
+
+      const data = await response.json(); // 성공적으로 데이터를 JSON으로 파싱
+      console.log("POST Success:", data);
+      // POST 요청 결과를 기반으로 이동
+      navigate(`/post/${data.id}`, { state: { ...data } });
+    } catch (error: any) {
+      console.error("Error:", error.message);
+    }
   };
 
   return (
